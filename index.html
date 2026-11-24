@@ -46,10 +46,9 @@ p { color: #555; line-height: 1.6; }
 <script>
 let result = localStorage.getItem("digiWinResult");
 
-if (result === null) {
-  result = Math.random() < 0.05 ? "win" : "lose";
-  localStorage.setItem("digiWinResult", result);
-}
+
+const result = Math.random() < 0.05 ? "win" : "lose";
+
 
 document.getElementById("result").innerHTML =
   result === "win"
