@@ -4,51 +4,135 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DIGI | Click & Win</title>
+<title>NEXA | Click & Win</title>
+
 <style>
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
-  background: #f5f5f5;
+  background: #f4f5f7;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
   margin: 0;
+  padding: 20px;
 }
+
 .card {
   background: white;
   padding: 40px 25px;
   border-radius: 16px;
   text-align: center;
-  width: 85%;
-  max-width: 400px;
+  width: 100%;
+  max-width: 420px;
   box-shadow: 0 8px 30px #00000015;
 }
-.logo {
+
+.nexa-logo {
+  width: 220px;
+  max-width: 85%;
+  height: auto;
+}
+
+.tagline {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #555;
+  margin-top: 12px;
+}
+
+.campaign {
+  font-size: 12px;
+  letter-spacing: 3px;
+  color: #777;
+  margin-top: 30px;
+}
+
+h1 {
+  font-size: 30px;
+  color: #222;
+}
+
+p {
+  color: #555;
+  line-height: 1.6;
+}
+
+.emoji {
+  font-size: 64px;
+  margin-top: 20px;
+}
+
+.cta {
+  display: block;
+  background: #222;
+  color: white;
+  text-decoration: none;
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 30px;
+  transition: background 0.2s;
+}
+
+.cta:hover {
+  background: #555;
+}
+
+.footer {
+  margin-top: 30px;
+  font-size: 12px;
+  color: #888;
+}
+
+.digi-logo {
   color: #e60012;
-  font-size: 48px;
+  font-size: 28px;
   font-weight: bold;
   font-style: italic;
 }
-h1 { font-size: 28px; }
-p { color: #555; line-height: 1.6; }
-.emoji { font-size: 64px; }
 </style>
 </head>
+
 <body>
 
 <div class="card">
-  <div class="logo">DIGI</div>
-  <p>CLICK & WIN</p>
+
+  <img src="nexa-logo.png"
+       class="nexa-logo"
+       alt="NEXA">
+
+  <div class="tagline">
+    Retail. Connected.
+  </div>
+
+  <div class="campaign">
+    CLICK & WIN
+  </div>
+
   <div id="result"></div>
+
+  <a href="https://www.digisystem.com/"
+     class="cta"
+     target="_blank"
+     rel="noopener noreferrer">
+    Discover More About DIGI &rarr;
+  </a>
+
+  <div class="footer">
+    Powered by
+    <div class="digi-logo">DIGI</div>
+  </div>
+
 </div>
 
 <script>
-let result = localStorage.getItem("digiWinResult");
-
-
 const result = Math.random() < 0.05 ? "win" : "lose";
-
 
 document.getElementById("result").innerHTML =
   result === "win"
@@ -59,8 +143,9 @@ document.getElementById("result").innerHTML =
      to claim your prize.</p>`
   : `<div class="emoji">😊</div>
      <h1>Thank You!</h1>
-     <p>Thank you for participating and visiting DIGI.
-     Enjoy the rest of your experience!</p>`;
+     <p>Thank you for participating!</p>
+     <p>Discover how NEXA is transforming
+     the retail experience.</p>`;
 </script>
 
 </body>
